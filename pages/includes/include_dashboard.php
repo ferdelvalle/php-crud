@@ -1,7 +1,26 @@
 <?php
 require_once("../pages/includes/config.php");
+// Apply Filters
+
+$rgex = ".*\..*";
+                    
+if($_SERVER["REQUEST_METHOD"] == "GET"){
+    // Validate name
+    $input_level = $_GET["level"];
+    $input_slevel =$_GET["slevel"];
+    if($input_level === "all" && $input_slevel === "all"){
+        $rgex = ".*\..*";
+    } elseif($input_level === "all" && $input_slevel !== "all"){
+        $rgex = $input_slevel;
+    } elseif($input_level !== "all" && $input_slevel === "all"){
+        $rgex = $input_level;
+    } else{
+        $rgex = $input_level . "\..*" . $input_slevel;
+    }
+}
+
 // Attempt select query execution
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products WHERE categories REGEXP '" . $rgex . "'";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         echo "<table class='table table-bordered table-striped'>";

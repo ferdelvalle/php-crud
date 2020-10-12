@@ -38,8 +38,55 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <div>
                 <div class="col-lg-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Productos</h2>
-                        <a href="create.php" class="btn btn-success pull-right">Agregar nuevo producto</a>
+                    <a href="create.php" class="btn btn-success pull-right">Agregar nuevo producto</a>
+                        <div class="pull-left">
+                            <h2 >Productos</h2>
+                            <h4>Puedes filtrar seleccionado un nivel y un subnivel al mismo tiempo.</h4>
+                            <br><br>
+                            <form method="GET">
+                            
+                                <div class="filter-container">
+                                    <div class="filter-column form-group">
+                                        <h4>Nivel</h4>
+                                        <input type="radio" class="form-check-input" id="lvl-all" name="level" value="all">
+                                        <label for="lvl-all">Todos</label><br>
+
+                                        <input type="radio" class="form-check-input" id="a1" name="level" value="^(A1, )">
+                                        <label for="a1">A1</label><br>
+
+                                        <input type="radio" class="form-check-input" id="a2" name="level" value="^(A2, )">
+                                        <label for="a2">A2</label><br>
+
+                                        <input type="radio" class="form-check-input" id="b1" name="level" value="^(B1, )">
+                                        <label for="b1">B1</label><br>
+
+                                        <input type="radio" class="form-check-input" id="b1-plus" name="level" value="^(B1+, )">
+                                        <label for="b1-plus">B1+</label><br>
+
+                                        <input type="radio" class="form-check-input" id="b2" name="level" value="^(B2, )">
+                                        <label for="b2">B2</label><br>
+
+                                        <input type="radio" class="form-check-input" id="c1" name="level" value="^(C1, )">
+                                        <label for="c1">C1</label><br>
+                                    </div>
+                                    <div class="filter-column form_group">
+                                        <h4>Sub Nivel</h4>
+                                        <input type="radio" class="form-check-input" id="slvl-all" name="slevel" value="all">
+                                        <label for="slvl-all">Todos</label><br>
+
+                                        <input type="radio" class="form-check-input" id="a" name="slevel" value="( A)$">
+                                        <label for="a">A</label><br>
+
+                                        <input type="radio" class="form-check-input" id="b" name="slevel" value="( B)$">
+                                        <label for="b">B</label><br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <input type="submit" class="btn btn-primary" value="filtrar"> 
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <?php
                     // Include DB config and CRUD
