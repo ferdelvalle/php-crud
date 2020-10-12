@@ -54,7 +54,7 @@
 
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Editar">
-                        <a href="../dashboard.php" class="btn btn-default">Cancelar</a>
+                        <a href="../pages/dashboard.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>        
