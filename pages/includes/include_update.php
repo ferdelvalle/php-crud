@@ -80,7 +80,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: ../dashboard.php");
+                header("location: ../pages/dashboard.php");
                 exit();
             } else{
                 echo "Algo salió mal. Por favor, inténtalo más tarde.";
