@@ -29,7 +29,7 @@
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Ingresar">
             </div>
-            <p>¿No tienes una cuenta? <a href="register.php">Regístrate</a>.</p>
+            <p>¿No tienes una cuenta? <a href="../pages/register.php">Regístrate</a>.</p>
         </form>
     </div>    
 </body>

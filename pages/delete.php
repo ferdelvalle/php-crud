@@ -24,7 +24,7 @@
                             <p>¿Estás segur@ de que quieres borrar este producto?</p><br>
                             <p>
                                 <input type="submit" value="Sí" class="btn btn-danger">
-                                <a href="../dashboard.php" class="btn btn-default">No</a>
+                                <a href="../pages/dashboard.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>

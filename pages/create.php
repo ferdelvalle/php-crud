@@ -50,7 +50,7 @@ require_once("../pages/includes/include_create.php");
                             <span class="help-block"><?php echo $post_title_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Enviar">
-                        <a href="../dashboard.php" class="btn btn-default">Cancelar</a>
+                        <a href="../pages/dashboard.php" class="btn btn-default">Cancelar</a>
                     </form>
                 </div>
             </div>        

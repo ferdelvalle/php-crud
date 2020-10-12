@@ -15,7 +15,7 @@
                         <h1>La solicitud no es válida.</h1>
                     </div>
                     <div class="alert alert-danger fade in">
-                        <p>Por favor, <a href="../dashboard.php" class="alert-link">regresa</a> e inténtalo nuevamente.</p>
+                        <p>Por favor, <a href="../pages/dashboard.php" class="alert-link">regresa</a> e inténtalo nuevamente.</p>
                     </div>
                 </div>
             </div>        

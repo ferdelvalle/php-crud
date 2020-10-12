@@ -39,7 +39,7 @@
                         <label>Título</label>
                         <p class="form-control-static"><?php echo $row["post_title"]; ?></p>
                     </div>
-                    <p><a href="../dashboard.php" class="btn btn-primary">Regresar</a></p>
+                    <p><a href="../pages/dashboard.php" class="btn btn-primary">Regresar</a></p>
                 </div>
             </div>        
         </div>

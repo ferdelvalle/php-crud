@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: ../dashboard.php");
+                header("location: ./dashboard.php");
                 exit();
             } else{
                 echo "Algo salió mal. Por favor, inténtalo más tarde.";
