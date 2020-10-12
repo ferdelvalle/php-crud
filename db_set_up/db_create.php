@@ -1,4 +1,7 @@
 <?php
+
+//crear base de datos 
+
 /* Attempt MySQL server connection. */
 $link = mysqli_connect("localhost", "root", "hirefer");
  
