@@ -22,3 +22,4 @@ if(mysqli_query($link, $sql)){
  
 // Close connection
 mysqli_close($link);
+?>
