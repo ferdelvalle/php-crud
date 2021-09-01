@@ -8,23 +8,23 @@ $new_password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+
     // Validate new password
     if(empty(trim($_POST["new_password"]))){
-        $new_password_err = "Por favor, ingresa la nueva contraseña.";     
-    } elseif(strlen(trim($_POST["new_password"])) < 6){
-        $new_password_err = "La contraseña debe tener al menos seis caracteres.";
+        $new_password_err = "Input a new password";     
+    } elseif(strlen(trim($_POST["new_password"])) < 8){
+        $new_password_err = "Passwords must be at least 8 characters long";
     } else{
         $new_password = trim($_POST["new_password"]);
     }
     
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Por favor, ingresa tu nueva contraseña.";
+        $confirm_password_err = "Input a new password.";
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($new_password_err) && ($new_password != $confirm_password)){
-            $confirm_password_err = "Las contraseñas no coinciden.";
+            $confirm_password_err = "Passwords don't match";
         }
     }
         
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: ../pages/login.php");
                 exit();
             } else{
-                echo "Algo salió mal. Por favor, inténtalo más tarde.";
+                echo "Something went wrong, please try again later";
             }
 
             // Close statement

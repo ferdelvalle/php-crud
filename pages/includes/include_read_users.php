@@ -5,7 +5,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     require_once("../pages/includes/config.php");
     
     // Prepare a select statement
-    $sql = "SELECT * FROM properties WHERE id = ?";
+    $sql = "SELECT * FROM users WHERE id = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -23,27 +23,12 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $ess_prop_type = $row["ess_prop_type"]; 
-                $ess_prop_style = $row["ess_prop_style"];
-                $ess_prop_subtype = $row["ess_prop_subtype"]; 
-                $loc_address = $row["loc_address"]; 
-                $loc_street = $row["loc_street"];
-                $loc_apart_no = $row["loc_apart_no"];
-                $loc_city = $row["loc_city"];
-                $loc_state = $row["loc_state"];
-                $loc_zip = $row["loc_zip"];
-                $list_info_office = $row["list_info_office"];
-                $list_info_start = $row["list_info_start"];
-                $list_info_exp = $row["list_info_exp"];
-                $list_info_price = $row["list_info_price"];
-                $list_info_freq = $row["list_info_freq"];
-                $prop_info_beds = $row["prop_info_beds"];
-                $prop_info_baths = $row["prop_info_baths"];
-                $prop_info_sq_ft = $row["prop_info_sq_ft"];
-                $prop_info_serv_type = $row["prop_info_serv_type"];
-                $prop_info_com_name = $row["prop_info_com_name"];
-                $remarks_desc_err = $row["remarks_desc"];
- 
+                $username = $row["username"];
+                $name = $row["name"];
+                $lastname =$row["lastname"];
+                $role = $row["role"];
+                $created_at = $row["created_at"];
+
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: ../pages/error.php");

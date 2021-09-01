@@ -3,7 +3,7 @@
 //crear base de datos 
 
 /* Attempt MySQL server connection. */
-$link = mysqli_connect("localhost", "root", "hirefer");
+$link = mysqli_connect("localhost", "elder", "ElPatoFeo99");
  
 // Check connection
 if($link === false){
@@ -11,9 +11,9 @@ if($link === false){
 }
  
 // Attempt create database query execution
-$sql = "CREATE DATABASE store";
+$sql = "CREATE DATABASE listings";
 if(mysqli_query($link, $sql)){
-    echo "store database created successfully.\n\n";
+    echo "listings database created successfully.\n\n";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }

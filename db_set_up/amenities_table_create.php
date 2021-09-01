@@ -8,17 +8,13 @@ if($link === false){
 }
  
 // Attempt create table query execution
-$sql = "CREATE TABLE users (
+$sql = "CREATE TABLE amenities (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  username VARCHAR(50) NOT NULL UNIQUE,
-  name VARCHAR(255) NOT NULL,
-  lastname VARCHAR(255) NOT NULL,
-  role VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  amenity VARCHAR(50),
+  image VARCHAR(50)
 )";
 if(mysqli_query($link, $sql)){
-    echo "users table created successfully.\n\n";
+    echo "amenities table created successfully.\n\n";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }

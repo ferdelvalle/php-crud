@@ -1,6 +1,6 @@
 <?php
     // Include DB config and CRUD
-    require_once("../pages/includes/include_update.php");
+    require_once("../pages/includes/include_assign_agent.php");
 ?>
  
 <!DOCTYPE html>
@@ -25,7 +25,6 @@
                             <label for="agent">Assign Agent</label>
                             <select class="form-control" name="agent" id="agent">
                                 <?php 
-                                    require_once("../pages/includes/include_fetch_users.php");
                                     agents_options ($users_arr);
                                 ?>
                             </select>
@@ -42,7 +41,7 @@
                         </div>
 
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-                        <input type="submit" class="btn btn-primary" value="Edita">
+                        <input type="submit" class="btn btn-primary" value="Edit">
                         <a href="../pages/dashboard.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>

@@ -9,15 +9,13 @@
 </head>
 <body>
 <div class="container text-center my-auto">
-      <h1 class="mb-1">CRUD APP</h1>
+      <h1 class="mb-1">Temporary Home page</h1>
     </div>
     <div class="overlay"></div>
     <p>
-        <a href="./pages/dashboard.php" class="btn btn-primary btn-xl">Ingresar</a>
-        <a href="./pages/register.php" class="btn btn-primary btn-xl">Registrarse</a>
+        <a href="./pages/dashboard.php" class="btn btn-primary btn-xl">Login</a>
     </p>
     <p>
-        <a href="https://github.com/ferdelvalle/php-crud" class="btn btn-primary" target="_blank">Ver código en github</a>
     </p>
 </body>
 </html>

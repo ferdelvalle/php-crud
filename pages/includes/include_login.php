@@ -20,14 +20,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Por favor, ingresa tu usuario.";
+        $username_err = "You must enter an user";
     } else{
         $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Por favor, ingresa tu contraseña.";
+        $password_err = "You must enter a password";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -67,15 +67,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: ../pages/dashboard.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "La contraseña no es válida.";
+                            $password_err = "Invalid password";
                         }
                     }
                 } else{
                     // Display an error message if username doesn't exist
-                    $username_err = "El usuario no existe.";
+                    $username_err = "user doesn't exist";
                 }
             } else{
-                echo "Algo salió mal. Por favor, inténtalo más tarde.";
+                echo "something went wrong, please try again later";
             }
 
             // Close statement

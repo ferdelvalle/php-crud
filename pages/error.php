@@ -12,10 +12,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>La solicitud no es válida.</h1>
+                        <h1>Invalid request</h1>
                     </div>
                     <div class="alert alert-danger fade in">
-                        <p>Por favor, <a href="../pages/dashboard.php" class="alert-link">regresa</a> e inténtalo nuevamente.</p>
+                        <p>Please, <a href="../pages/dashboard.php" class="alert-link">go back</a> and try again</p>
                     </div>
                 </div>
             </div>        

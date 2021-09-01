@@ -5,7 +5,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
   require_once("../pages/includes/config.php");
   
   // Prepare a delete statement
-  $sql = "DELETE FROM properties WHERE id = ?";
+  $sql = "DELETE FROM users WHERE id = ?";
   
   if($stmt = mysqli_prepare($link, $sql)){
       // Bind variables to the prepared statement as parameters
@@ -17,7 +17,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
       // Attempt to execute the prepared statement
       if(mysqli_stmt_execute($stmt)){
           // Records deleted successfully. Redirect to landing page
-          header("location: ../pages/dashboard.php");
+          header("location: ../pages/manage-users.php");
           exit();
       } else{
           echo "Something went wrong, please try again later";

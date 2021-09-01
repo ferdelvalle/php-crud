@@ -4,64 +4,59 @@ require_once("../pages/includes/config.php");
 
  
 // Define variables and initialize with empty values
-$product_number = $sku = $meta_type = $categories = $post_title = "";
-$product_number_err = $sku_err = $meta_type_err = $categories_err = $post_title_err = "";
- 
+$username = $password = $confirm_password = $name = $lastname = $role = "";
+$username_err = $password_err = $confirm_password_err = $name_err = $lastname_err = $role_err = "";
+
 // Processing form data when form is submitted
 if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
     
-    // Validate product_number
-    $input_product_number = trim($_POST["product_number"]);
-    if(empty($input_product_number)){
-        $product_number_err = "Por favor, ingresa un número de producto.";
+    // Validate name
+    $input_name = trim($_POST["name"]);
+    if(empty($input_name)){
+        $name_err = "Input a new name";
     } else{
-        $product_number = $input_product_number;
+        $name = $input_name;
     }
 
-    // Validate product_number
-    $input_product_number = trim($_POST["product_number"]);
-    if(empty($input_product_number)){
-        $product_number_err = "Por favor, ingresa un número de producto.";
+    // Validate lastname
+    $input_lastname = trim($_POST["lastname"]);
+    if(empty($input_lastname)){
+        $lastname_err = "Input a new last name";
     } else{
-        $product_number = $input_product_number;
+        $lastname = $input_lastname;
     }
 
-    // Validate sku
-    $input_sku = trim($_POST["sku"]);
-    if(empty($input_sku)){
-        $sku_err = "Por favor, ingresa un SKU.";
-    } else{
-        $sku = $input_sku;
-    }
+      // Validate role
+      $input_role = trim($_POST["role"]);
+      if(empty($input_role)){
+          $role_err = "Select a new role";
+      } else{
+          $role = $input_role;
+      }
 
-    // Validate meta_type
-    $input_meta_type = trim($_POST["meta_type"]);
-    if(empty($input_meta_type)){
-        $meta_type_err = "Por favor, ingresa un tipo.";     
-    } else{
-        $meta_type = $input_meta_type;
-    }
-
-    // Validate categories
-    $input_categories = trim($_POST["categories"]);
-    if(empty($input_categories)){
-        $categories_err = "Por favor, ingresa categorías.";     
-    } else{
-        $categories = $input_categories;
-    }
-
-    // Validate post_title
-    $input_post_title = trim($_POST["post_title"]);
-    if(empty($input_post_title)){
-        $post_title_err = "Por favor, ingresa un título.";     
-    } else{
-        $post_title = $input_post_title;
-    }
+      // Validate password
+      if(empty(trim($_POST["password"]))){
+          $password_err = "Input a password.";     
+      } elseif(strlen(trim($_POST["password"])) < 8){
+          $password_err = "Passwords must be at least 8 characters long";
+      } else{
+          $password = trim($_POST["password"]);
+      }
+      
+      // Validate confirm password
+      if(empty(trim($_POST["confirm_password"]))){
+          $confirm_password_err = "Confirm the password";     
+      } else{
+          $confirm_password = trim($_POST["confirm_password"]);
+          if(empty($password_err) && ($password != $confirm_password)){
+              $confirm_password_err = "Passwords don't match";
+          }
+      }
     
     // Check input errors before inserting in database
-    if(empty($product_number_err) && empty($sku_err) && empty($meta_type_err) && empty($categories_err) && empty($post_title_err)){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($name_err) && empty($lastname_err) && empty($role_err)){
         // Prepare an update statement
         $sql = "UPDATE products SET product_number=?, sku=?, meta_type=?, categories=?, post_title=? WHERE id=?";
          
